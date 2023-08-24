@@ -1,0 +1,32 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.c-linkBtn {
+    display: inline-block;
+    margin-top: 40px;
+
+    @include min.breakpoint(sp) {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+
+    a {
+        padding: 1rem 2.5rem;
+        border: 1px solid #707070;
+        color: #000000;
+        height: auto;
+        transition: .2s all;
+        font-weight: 500;
+
+        &:hover {
+            background: #978F10;
+            color: #fff;
+            border: 1px solid #978F10;
+            transition: .2s all;
+        }
+    }
+
+    
+}

@@ -1,0 +1,173 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.c-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+        
+    .modal-overlay {
+        display: flex;
+        position: fixed;
+        background: rgba(255, 255, 255, 0.4);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        justify-content: center;
+
+        .modal-container {
+            display: block;
+            position: absolute;
+            background: #fff;
+            width: 500px;
+            top: 15%;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid #707070;
+            padding: 20px;
+
+            @include min.breakpoint(sp) {
+              width: 100%;
+              top: 80px;
+              padding: unset;
+            }
+           
+            .modal-title {
+                font: normal normal 500 20px/27px 'YuMincho';
+                border-bottom: 1px solid #E7E7E7;
+                margin: 25px 30px 0;
+                padding-bottom: 25px;
+            }
+
+            .modal-close {
+                position: absolute;
+                top:20px;
+                right: 22px;
+                width: 18px;
+                height: 18px;
+            }
+
+            .modal-content {
+
+                .reserve-form {
+                    text-align: left;
+                    padding: 25px;
+                    padding-bottom: 0;
+                    
+
+                    label {
+                        display: block;
+                        margin-bottom: 8px;
+                        font-weight: 500;
+                    }
+                    input, select {
+                        width: 100%;
+                        border: 1px solid #E7E7E7;
+                        margin-bottom: 15px;
+                        height: 34px;
+                        box-sizing: border-box;
+
+                        &::placeholder {
+                          color: #797878;
+                       }
+                    }
+                    select {
+                        margin-bottom: 15px;
+                        appearance: none;
+                        color: #797878;
+                    }
+                    
+                    #plan {
+                        font: normal normal medium 14px/19px 'YuMincho';
+
+                        option:first-child { 
+                          color: #bbb; 
+                        }
+                    }
+                    #js-datepicker {
+                      margin-bottom: 0;
+                    }
+                    .submitBtn {
+                        display: block;
+                        width: 50%;
+                        height: 42px;
+                        padding-top: 13px;
+                        padding-bottom: 13px;
+                        margin: 64px auto 90px;
+                        line-height: 1;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+/* モーダルアニメーション */
+@keyframes mmfadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes mmfadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes mmslideIn {
+    from {
+      transform: translateY(15%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes mmslideOut {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10%);
+    }
+  }
+  
+  .micromodal-slide {
+    display: none;
+  }
+  
+  .micromodal-slide.is-open {
+    display: block;
+  }
+  
+  .micromodal-slide[aria-hidden="false"] .modal-overlay {
+    animation: mmfadeIn .3s cubic-bezier(.0, .0, .2, 1);
+  }
+  
+  .micromodal-slide[aria-hidden="false"] .modal-container {
+    animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+  }
+  
+  .micromodal-slide[aria-hidden="true"] .modal-overlay {
+    animation: mmfadeOut .3s cubic-bezier(.0, .0, .2, 1);
+  }
+  
+  .micromodal-slide[aria-hidden="true"] .modal-container {
+    animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+  }
+  
+  .micromodal-slide .modal-container,
+  .micromodal-slide .modal-overlay {
+    will-change: transform;
+  }

@@ -1,0 +1,68 @@
+@use "../foundation/mixins" as min;
+
+body {
+    font-family: 
+        "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "MS P明朝", "MS PMincho", serif;
+    * {
+        box-sizing: border-box;
+        font-weight: 800;
+    }
+
+    p {
+        font-weight: 500;
+    }
+
+    /* overflow: hidden; */
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.inner {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @include min.breakpoint(tablet) {
+        max-width: 90%;
+    }
+}
+
+.br-sp {
+    display: none;
+
+    @include min.breakpoint(sp) {
+      display: block;
+    }
+}
+
+.br-pc {
+
+    @include min.breakpoint(tablet) {
+        display: none;
+      }
+
+    @include min.breakpoint(sp) {
+      display: none;
+    }
+}
+/* 
+.wrap {
+    overflow: hidden;
+} */

@@ -1,0 +1,71 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-mainCatch {
+    background-image: url(../img/bg.jpg);
+    width: 100%;
+    height: 681px;
+    writing-mode: vertical-rl;
+    display: flex;
+
+    @include min.breakpoint(tablet) {
+        background-image: url(../img/bg-sp.jpg);
+        writing-mode: unset;
+        padding-bottom: 100px;
+    }
+
+    .mainCatchContainer {
+        display: block;
+        width: 600px;
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+
+        .catchTitle {
+            font-size: 1.75rem;
+            line-height: 1.5;
+            font-family: 'YuMincho';
+            letter-spacing: 0.5rem;
+            font-weight: 500;
+
+            .brIndent {
+                display: block;
+                text-indent: 3rem;
+                font-weight: 500;
+            }
+
+            @include min.breakpoint(tablet) {
+                font-size: 1.5rem;
+                line-height: 1.5;
+
+                .brIndent {
+                    text-indent: unset;
+                }
+            }
+        }
+
+        p {
+            margin-top: 50px;
+            letter-spacing: 0.25rem;
+            font-family: 'YuMincho';
+
+            @include min.breakpoint(sp) {
+                margin-top: 20px;
+                margin-left: 10px;
+            }
+
+            span {
+                text-orientation: upright;
+                font-weight: 500;
+            }
+        }
+
+        .ryokanName {
+            align-self: flex-end;
+            font-size: 1.375rem;
+            letter-spacing: 0.5rem;
+        }
+    }
+} 

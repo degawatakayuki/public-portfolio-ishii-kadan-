@@ -1,0 +1,47 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-mainContents {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 106px;
+    margin-bottom: 78px;
+    overflow: hidden;
+
+    @include min.breakpoint(sp) {
+        margin-top: unset;
+        margin-bottom: unset;
+        background-image: url(../img/bg-2-sp.jpg);
+    }
+}
+
+
+//room.html
+.mainContents-room {
+    width: 100%;
+    margin-top: 90px;
+    padding-top: 50px;
+
+    @include min.breakpoint(sp) {
+        margin-top: 50px;
+    }
+
+    .mainContent-roomContainer {
+        width: 100%;
+
+        h2 {
+            height: 2;
+            text-align: center;
+            margin-bottom: 130px;
+            font-weight: 500;
+
+            @include min.breakpoint(sp) {
+                font-size: 1.125rem;
+                margin-bottom: 50px;
+            }
+        }
+
+
+    }
+}

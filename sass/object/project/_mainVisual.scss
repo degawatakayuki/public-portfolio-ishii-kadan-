@@ -1,0 +1,56 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-mainVisual {
+    position: relative;
+    
+    .mainTitle {
+        position: absolute;
+        writing-mode: vertical-rl;
+        color: var.$white;
+        z-index: 100;
+        font: normal normal 800 34px/42px 'YuMincho';
+        top:30%;
+        right: 25%;
+        line-height: 2;
+        letter-spacing: 1.25rem;
+
+        @include min.breakpoint(sp) {
+            font: normal normal 800 28px/34px 'YuMincho';
+            top:30%;
+            right: 32%;
+            line-height: 2;
+            letter-spacing: 1rem;
+        }
+    }
+}
+
+//room.html
+.mainVisual-room {
+    
+    text-align: center;
+
+    .mainTitle-room {
+        position: absolute;
+        display: inline-block;
+        color: #fff;
+        top: 50%;
+        transform: translateX(-50%);
+        font: normal normal 800 34px/42px 'YuMincho';
+        
+    }
+
+    .mainVisual-room {
+        height: 500px;
+
+        @include min.breakpoint(tablet) {
+            height: 400px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

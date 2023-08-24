@@ -1,0 +1,70 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+
+.p-onsenExplanation {
+    margin-bottom: 80px;
+
+    @include min.breakpoint(sp) {
+        margin-bottom: unset;
+    }
+    
+    .explanationContainer {
+        padding: 80px 0;
+        border-top: 1px solid #E7E7E7;
+        border-bottom: 1px solid #E7E7E7;
+
+        @include min.breakpoint(sp) {
+            border-top: unset;
+            border-bottom: unset;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.625rem;
+            font-weight: 500;
+        }
+
+        .explanationContent {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 10%;
+            padding-right: 10%;
+
+            @include min.breakpoint(sp) {
+                padding-left: unset;
+                padding-right: unset;
+            }
+
+            dl {
+                width: 100%;
+                display: flex;
+                border-top: 1px solid #E7E7E7;
+                padding: 15px 0;
+                font-size: 0.9375em;
+                line-height: 2;
+
+                dt {
+                    width: 20%;
+                    font-size: 0.9375rem;
+                    font-weight: 500;
+
+                    @include min.breakpoint(sp) {
+                        width: 22%;
+                    }
+                }
+
+                dd {
+                    flex: 1;
+                    font-size: 0.9375rem;
+                    font-weight: 500;
+                }
+
+                &:last-of-type {
+                    border-bottom: 1px solid #E7E7E7;
+                }
+            }
+        }
+        
+    }
+}

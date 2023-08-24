@@ -1,0 +1,77 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+.p-recommendationPlan {
+    background-image: url(../img/bg02.jpg);
+    background-size: cover;
+    width: 100%;
+    padding: 60px 0 140px;
+
+    @include min.breakpoint(sp) {
+        background-image: url(../img/bg02-sp.jpg);
+    }
+
+    .planContens {
+        display: flex;
+        justify-content: space-around;
+
+        @include min.breakpoint(sp) {
+            flex-direction: column;
+        }
+
+        .planMenu {
+            width: 30%;
+            text-align: left;
+
+            @include min.breakpoint(sp) {
+                width: 100%;
+            }
+ 
+            .planImg {
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    transition: 1s all;
+                }
+            }
+            
+
+            h3 {
+                font-size: 1.25rem;
+                line-height: 1.25;
+                margin-top: 28px;
+                margin-bottom: 30px;
+                font-weight: 500;
+
+                @include min.breakpoint(sp) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            p {
+                width: 90%;
+                line-height: 2;
+
+                @include min.breakpoint(sp) {
+                    width: 100%;
+                    line-height: 1.5;
+                    margin-bottom: 50px;
+                }
+            }
+
+            &:hover {
+
+                .planImg {
+                    overflow: hidden;
+
+                    img {
+                        transform: scale(1.1);
+                        transition: 1s all;                       
+                    }
+                }
+                
+            }
+        }
+    }
+}

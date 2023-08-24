@@ -1,0 +1,25 @@
+@use "variables" as var;
+
+// mixin ブレークポイント
+@mixin breakpoint( $point ) {
+	@if $point == sp {
+		@media ( max-width: var.$sp-breakpoint ) {
+			@content ;
+		}
+	}
+	@if $point == tablet {
+		@media ( max-width: var.$md-breakpoint ) {
+			@content ;
+		}
+	}
+	/* @if $point == pc {
+		@media ( min-width: $pc-breakpoint ) {
+			@content ;
+		}
+	}
+	@if $point == wide {
+		@media ( min-width: $wd-breakpoint ) {
+			@content ;
+		}
+	} */
+}

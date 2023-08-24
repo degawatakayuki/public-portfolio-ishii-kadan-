@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@use "foundation/_mixins";
+@use "foundation/_variables";
+@use "foundation/_reset.scss"; 
+@use "foundation/_base.scss";
+
+@use "layout/_header.scss";
+@use "layout/_footer.scss";
+
+@use "object/component/slideBox";
+@use "object/component/modal";
+@use "object/component/card";
+@use "object/component/button";
+@use "object/component/text";
+@use "object/component/tabPanel";
+@use "object/component/breadCrumbList";
+
+@use "object/project/mainVisual";
+@use "object/project/mainCatch";
+@use "object/project/mainContents";
+@use "object/project/recommendationPlan";
+@use "object/project/info";
+@use "object/project/access";
+@use "object/project/onsenExplanation";
+
+/* @use "object/utility/spacing"; */

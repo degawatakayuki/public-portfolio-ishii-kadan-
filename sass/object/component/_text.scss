@@ -1,0 +1,19 @@
+@use "../../foundation/mixins" as min;
+
+.c-sectionTitle {
+
+    h2 {
+        font: normal normal 500 36px/32px 'YuMincho';
+        text-align: center;
+        margin-bottom: 60px;
+
+        @include min.breakpoint(sp) {
+            font: normal normal 500 28px/24px 'YuMincho';
+        }
+    }
+
+    img {
+        display: block;
+        margin: 0 auto 13px;
+    }
+}

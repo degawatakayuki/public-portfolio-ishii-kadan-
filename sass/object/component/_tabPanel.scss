@@ -1,0 +1,48 @@
+@use "../../foundation/variables" as var;
+@use "../../foundation/mixins" as min;
+.c-tabPanel {
+    width: 100%;
+    margin: 0 auto;
+
+    .tab-group {
+        display: flex;
+        justify-content: center;
+
+        .tab {
+            cursor: pointer;
+        }
+
+        li {
+            padding: 10px 20px;
+        }
+
+        .is-active {
+            font-weight: 500;
+            text-decoration: underline;
+            transition: all 0.2s ease-out;
+        }
+    }
+
+    .panel-group {
+        margin-top: 50px;
+        
+
+        .panel {
+            display: none;
+
+            >.c-card-info:nth-of-type(5),.c-card-info:nth-of-type(6) {
+                margin-bottom: 0;
+
+                @include min.breakpoint(sp) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            &.is-show {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
